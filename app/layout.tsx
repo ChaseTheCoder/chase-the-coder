@@ -19,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Nav/>
-        {children}
+        <main>
+          {children}
+        </main>
+        <footer>footer</footer>
       </body>
     </html>
   );

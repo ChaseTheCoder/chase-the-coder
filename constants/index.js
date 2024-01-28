@@ -1,0 +1,1 @@
+export const graphql_api = 'https://api-us-east-1-shared-usea1-02.hygraph.com/v2/clrshptpr09b201w62jrk9qlo/master';

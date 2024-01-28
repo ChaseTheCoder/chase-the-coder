@@ -8,22 +8,22 @@ export default function Nav() {
       </div>
       <div className='flex flex-row'>
         <div className="mr-6">
-          <a className="text-blue-500 hover:text-blue-800" href="#">Projects</a>
+          <a className="text-gray-500 hover:text-black" href="/">Projects</a>
         </div>
         <div className="mr-6">
-          <a className="text-blue-500 hover:text-blue-800" href="#">About</a>
+          <a className="text-gray-500 hover:text-black" href="/">About</a>
         </div>
         <div className="mr-6">
-          <a className="text-gray-400 cursor-not-allowed" href="#">Blog</a>
+          <a className="text-gray-500 hover:text-black" href="/blog">Blog</a>
         </div>
         <div className="mr-6">
-          <a className="text-gray-400 cursor-not-allowed" href="#">Resume</a>
+          <a className="text-gray-500 hover:text-black" href="https://docs.google.com/document/d/1N-j-czmPYUi-sKHWNAb2uSJtC544tkLTqcIO_Dfsz1M/edit?usp=sharing" target='blank'>Resume</a>
         </div>
         <div className="mr-6">
-          <a className="text-gray-400 cursor-not-allowed" href="#">LinkedIn</a>
+          <a className="text-gray-500 hover:text-black" href="https://www.linkedin.com/in/chasethecoder/" target='blank'>LinkedIn</a>
         </div>
         <div className="mr-6">
-          <a className="text-gray-400 cursor-not-allowed" href="#">GitHub</a>
+          <a className="text-gray-500 hover:text-black" href="https://github.com/ChaseTheCoder" target='blank'>GitHub</a>
         </div>
       </div>
     </nav>
