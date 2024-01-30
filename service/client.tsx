@@ -18,6 +18,7 @@ export interface HomePageInterface {
   sectionTech: string
   title1: string
   title2: string
+  subtitle: string
   heroImage: URL
   sectionAboutMeImage:URL
 };
@@ -32,6 +33,7 @@ export const homePage = async () => {
         sectionTech
         title1
         title2
+        subtitle
         heroImage {
           url
         }

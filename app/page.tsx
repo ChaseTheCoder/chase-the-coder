@@ -45,6 +45,7 @@ export default function Home() {
                     <Hero
                         title1={homeData.title1}
                         title2={homeData.title2}
+                        subtitle={homeData.subtitle}
                         heroImage={homeData.heroImage.url}
                     />
                     <h2>{homeData.sectionTech}</h2>

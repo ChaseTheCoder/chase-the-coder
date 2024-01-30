@@ -1,10 +1,13 @@
 import React from 'react';
+import styles from './nav.module.css';
 
 export default function Nav() {
   return (
     <nav className="flex items-center justify-between flex-wrap p-6">
       <div className="mr-6">
-        <a className="text-blue-500 hover:text-blue-800" href="#">chaseTheCoder</a>
+        <a className="text-xl text-black tracking-wide" href="/">
+          chase<span className={styles.navLeftTitle}>TheCoder</span>
+        </a>
       </div>
       <div className='flex flex-row'>
         <div className="mr-6">

@@ -1,0 +1,4 @@
+.navLeftTitle {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 50%, #16a34a 50%, #16a34a  100%);
+  z-index: -1;
+}
