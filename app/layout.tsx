@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Nav/>
-        <main className='max-w-6xl place-content-center mx-6 md:mx-10 lg:mx-36'>
+        <main className='max-w-6xl mx-6 md:mx-10 lg:mx-auto'>
           {children}
         </main>
         <footer>footer</footer>
