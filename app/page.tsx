@@ -52,7 +52,6 @@ export default function Home() {
                     <TechIUseOften
                         headingText={homeData.sectionTech}
                     />
-                    <h2>{homeData.sectionTech}</h2>
                     <h2>{homeData.sectionProjects}</h2>
                     <h2>{homeData.sectionAboutMe}</h2>
                     <h2>{homeData.sectionAboutMeDescription}</h2>
