@@ -67,7 +67,7 @@ export default function TechIUseOften({headingText}: Props){
         <div className='flex flex-wrap justify-between gap-3'>
             {techList.map((tech, index) => 
               <TechIcon
-                key={index}
+                key={`${index}-tech-icon`}
                 techIcon={tech.techIcon}
                 techText={tech.techText}
               />

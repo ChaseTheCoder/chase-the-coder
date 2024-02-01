@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { HomePageInterface, homePage } from '../service/client';
 import TechIUseOften from '@/containers/landing/techIUseOften'
 import Hero from '@/containers/landing/hero';
+import Projects from '@/containers/landing/projects';
+import AboutMe from '@/containers/landing/aboutMe';
 
 export default function Home() {
     const [homeData, setHomeData] = useState<HomePageInterface>();
@@ -52,9 +54,13 @@ export default function Home() {
                     <TechIUseOften
                         headingText={homeData.sectionTech}
                     />
-                    <h2>{homeData.sectionProjects}</h2>
-                    <h2>{homeData.sectionAboutMe}</h2>
-                    <h2>{homeData.sectionAboutMeDescription}</h2>
+                    <Projects
+                        headingText={homeData.sectionProjects}
+                    />
+                    <AboutMe
+                        headingText={homeData.sectionAboutMe}
+                        aboutMe={homeData.sectionAboutMeDescription}
+                    />
                 </div> :
                 <h1>Loading...</h1>
             }
