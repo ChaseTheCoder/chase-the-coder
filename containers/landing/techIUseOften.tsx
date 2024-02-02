@@ -2,7 +2,7 @@ import SectionBox from "./sectionBox"
 import Heading2 from '../../components/ComponentHeading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactElement } from "react";
-import { faCss3Alt, faHtml5, faReact, faJs, faNode, faAccessibleIcon, faGithub, faJenkins, faJava } from "@fortawesome/free-brands-svg-icons";
+import { faCss3Alt, faHtml5, faReact, faJs, faNode, faAccessibleIcon, faGithub, faJenkins, faJava, faPython } from "@fortawesome/free-brands-svg-icons";
 
 type Props = {
   headingText: string;
@@ -28,6 +28,10 @@ const techList = [
   {
     techIcon: faJava,
     techText: 'Java'
+  },
+  {
+    techIcon: faPython,
+    techText: 'Python'
   },
   {
     techIcon: faNode,

@@ -47,3 +47,48 @@ export const homePage = async () => {
 
   return response.homePage;
 }
+
+export interface BlogPostsObjectInterface {
+  blog_Posts: ProjectInterface[]
+}
+
+export default interface BlogCategories {
+  category: string
+  id: string
+}
+
+export interface ProjectInterface {
+  id: string
+  description: string
+  linkGitHub: string
+  linkLiveSite: string
+  linkYouTube: string
+  title: string
+  projectImage: URL
+  blogCategories: BlogCategories
+}
+
+export const projects = async () => {
+  const query = gql`
+    query Projects {
+      blog_Posts(where: {blogCategories_every: {category: "Projects"}}) {
+        id
+        description
+        linkGitHub
+        linkLiveSite
+        linkYouTube
+        title
+        projectImage {
+          url
+        }
+        blogCategories {
+          category
+          id
+        }
+      }
+    }
+  `;
+  const response: BlogPostsObjectInterface = await graphQLClient.request(query);
+
+  return response.blog_Posts;
+}
