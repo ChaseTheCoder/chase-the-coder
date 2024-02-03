@@ -61,8 +61,9 @@ export interface ProjectInterface {
   id: string
   description: string
   linkGitHub: string
-  linkLiveSite: string
-  linkYouTube: string
+  linkLiveSite?: string
+  linkYouTube?: string
+  techStack: string
   title: string
   projectImage: URL
   blogCategories: BlogCategories
@@ -77,6 +78,7 @@ export const projects = async () => {
         linkGitHub
         linkLiveSite
         linkYouTube
+        techStack
         title
         projectImage {
           url
