@@ -1,4 +1,4 @@
-import Heading2 from "@/components/ComponentHeading";
+import Heading2 from "@/components/Heading2";
 import SectionBox from "./sectionBox";
 import Image from 'next/image'
 

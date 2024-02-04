@@ -1,6 +1,6 @@
 type Props = {
   headingText: string;
-  textAlign: string;
+  textAlign: 'text-left' | 'text-center' | 'text-right' | 'text-justify' | 'text-start' | 'text-end';
 }
 
 export default function Heading2({headingText, textAlign}: Props){

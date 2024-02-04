@@ -1,5 +1,5 @@
 import SectionBox from "./sectionBox"
-import Heading2 from '../../components/ComponentHeading';
+import Heading2 from '../../components/Heading2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactElement } from "react";
 import { faCss3Alt, faHtml5, faReact, faJs, faNode, faAccessibleIcon, faGithub, faJenkins, faJava, faPython } from "@fortawesome/free-brands-svg-icons";
