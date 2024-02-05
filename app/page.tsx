@@ -67,7 +67,7 @@ export default function Home() {
     return (
         <>
             {homeData ?
-                <div className='grid grid-cols-1 divide-y'>
+                <div className='grid grid-cols-1 divide-y mx-6 md:mx-10'>
                     <Hero
                         title1={homeData.title1}
                         title2={homeData.title2}

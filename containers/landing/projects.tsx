@@ -20,12 +20,12 @@ export default function Projects({headingText, projectList}:Props){
             textAlign='text-center'
           />
           {projectList.map((project, index) =>
-            <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8 flex order-last md:order-first'>
-              <div className='cols-1 col-span-5 md:col-span-2 gap-4'>
-                <h3 className='font-bold'>{++index} / {project.title.toLocaleUpperCase()}</h3>
-                <p>{project.techStack}</p>
-                <p>{`${project.description.substring(0, 300)} [...]`}</p>
-                <div className='grid grid-cols-3 underline'>
+            <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8'>
+              <div className='cols-1 col-span-5 md:col-span-2'>
+                <h3 className='font-bold mb-4'>{++index} / {project.title.toLocaleUpperCase()}</h3>
+                <p className='my-3'>{project.techStack}</p>
+                <p className='text-justify my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
+                <div className='grid grid-cols-3 my-3 underline'>
                   <Link href={'/blog'}>
                     <p>Read More</p>
                   </Link>
@@ -39,7 +39,7 @@ export default function Projects({headingText, projectList}:Props){
                   }
                 </div>
               </div>
-              <div className='cols-1 col-span-5 md:col-span-3'>
+              <div className='cols-1 col-span-5 md:col-span-3 flex order-first md:order-last'>
                 <Image
                   src={project.projectImage.url} 
                   alt='ariel view of keyboard of Macbook with empty white space'

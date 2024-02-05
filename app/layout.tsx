@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Nav/>
-        <main className='max-w-6xl mx-6 md:mx-10 lg:mx-auto'>
+        <main className='max-w-6xl mx-auto'>
           {children}
         </main>
         <footer className='flex justify-between max-w-6xl mx-6 md:mx-10 lg:mx-auto'>
@@ -30,9 +30,9 @@ export default function RootLayout({
             <FontAwesomeIcon icon={faLinkedin} size='2xl' className='text-green-600'/>
             <FontAwesomeIcon icon={faGithub} size='2xl' className='text-green-600' />
           </div> */}
-          <div className="inline-flex items-center justify-center w-full">
-            <hr className="w-64 h-px my-8 bg-gray-200 border-0" />
-            <span className="absolute px-3 -translate-x-1/2 left-1/2">Chase The Coder</span>
+          <div className="flex flex-col items-center justify-center w-full">
+            <hr className="w-64 h-px my-2 bg-gray-200 border-0" />
+            <span className="mt-2 mb-4">Chase The Coder</span>
         </div>
         </footer>
       </body>

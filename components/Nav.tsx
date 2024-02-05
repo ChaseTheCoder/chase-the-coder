@@ -17,6 +17,9 @@ export default function Nav() {
   const handleClick = () => {
     setIsOpen(!isOpen);
   }
+  const closeMobileNav = () => {
+    setIsOpen(false);
+  }
 
   return (
     <nav className="flex items-center justify-between flex-wrap py-2 px-8 sticky top-0 bg-white">
@@ -36,8 +39,8 @@ export default function Nav() {
         <div>
           <a 
             className="text-gray-500 hover:text-black"
-            href="#projects"
-            onClick={handleClick}
+            href="/#projects"
+            onClick={closeMobileNav}
           >
             Projects
           </a>
@@ -45,8 +48,8 @@ export default function Nav() {
         <div>
           <a
             className="text-gray-500 hover:text-black"
-            href="/"
-            onClick={handleClick}
+            href="/#about-me"
+            onClick={closeMobileNav}
           >
             About
           </a>
@@ -56,7 +59,7 @@ export default function Nav() {
             className="text-gray-500
             hover:text-black"
             href="/blog"
-            onClick={handleClick}
+            onClick={closeMobileNav}
           >
             Blog
           </a>
@@ -65,9 +68,9 @@ export default function Nav() {
           <a
             className="text-gray-500 hover:text-black"
             href="https://docs.google.com/document/d/1N-j-czmPYUi-sKHWNAb2uSJtC544tkLTqcIO_Dfsz1M/edit?usp=sharing"
-            target='blank' onClick={handleClick}
+            target='blank' onClick={closeMobileNav}
           >
-            Resume
+            Resume↗︎
           </a>
         </div>
         <div>
@@ -75,9 +78,9 @@ export default function Nav() {
             className="text-gray-500 hover:text-black"
             href="https://www.linkedin.com/in/chasethecoder/"
             target='blank'
-            onClick={handleClick}
+            onClick={closeMobileNav}
           >
-            LinkedIn
+            LinkedIn↗︎
           </a>
         </div>
         <div>
@@ -85,9 +88,9 @@ export default function Nav() {
             className="text-gray-500 hover:text-black"
             href="https://github.com/ChaseTheCoder"
             target='blank'
-            onClick={handleClick}
+            onClick={closeMobileNav}
           >
-            GitHub
+            GitHub↗︎
           </a>
         </div>
       </div>

@@ -11,8 +11,8 @@ type Props = {
 export default function AboutMe({headingText, aboutMe, image}:Props){
   return (
     <SectionBox>
-      <div className='grid grid-cols-5 gap-4'>
-        <div className='flex justify-start items-center col-span-5 md:col-span-2'>
+      <div className='grid grid-cols-5 gap-4' id='about-me'>
+        <div className='flex justify-center md:justify-start items-center col-span-5 md:col-span-2'>
           <Image
             src={image} 
             alt='ariel view of keyboard of Macbook with empty white space'
@@ -24,9 +24,9 @@ export default function AboutMe({headingText, aboutMe, image}:Props){
         <div className='md:pl-20 col-span-5 md:col-span-3'>
           <Heading2
             headingText={headingText}
-            textAlign='text-start'
+            textAlign='text-center md:text-start'
           />
-          <p className='pt-8'>{aboutMe}</p>
+          <p className='pt-8 text-justify'>{aboutMe}</p>
         </div>
       </div>
     </SectionBox>
