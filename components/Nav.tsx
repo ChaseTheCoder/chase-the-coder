@@ -1,12 +1,12 @@
 'use client'
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './nav.module.css';
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
   const breakpoint = 620;
 
   useEffect(() => {
