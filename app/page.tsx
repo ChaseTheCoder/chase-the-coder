@@ -5,10 +5,11 @@ import TechIUseOften from '@/containers/landing/techIUseOften'
 import Hero from '@/containers/landing/hero';
 import Projects from '@/containers/landing/projects';
 import AboutMe from '@/containers/landing/aboutMe';
+import LoadingPage from '@/components/loading';
 
 export default function Home() {
     const [homeData, setHomeData] = useState<HomePageInterface>();
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [projectsData, setProjectsData] = useState<ProjectInterface[]>();
     const [loadingProjects, setProjectsLoading] = useState(false);
@@ -23,12 +24,13 @@ export default function Home() {
     }, []);
 
     const getHomePageData = async () => {
-        setLoading(true);
-        if(error) setError(false);
         const res: HomePageInterface = await homePage();
         if(res){
-            setLoading(false);
-            setHomeData(res);
+            setTimeout(() => {
+                setError(false);
+                setHomeData(res);
+                setLoading(false);
+            }, 3000);
         } else {
             setLoading(false);
             setError(true);
@@ -52,7 +54,7 @@ export default function Home() {
 
     if(loading) {
         return (
-            <h1>Loading...</h1>
+            <LoadingPage />
         )
     }
 
@@ -64,7 +66,7 @@ export default function Home() {
     
     return (
         <>
-            {homeData ? 
+            {homeData ?
                 <div className='grid grid-cols-1 divide-y'>
                     <Hero
                         title1={homeData.title1}
@@ -85,7 +87,7 @@ export default function Home() {
                         image={homeData.sectionAboutMeImage.url}
                     />
                 </div> :
-                <h1>Loading...</h1>
+                <LoadingPage />
             }
         </>
     );

@@ -14,14 +14,14 @@ export default function Projects({headingText, projectList}:Props){
   return (
     <SectionBox>
       {projectList ?
-        <div className='grid grid-cols-1 gap-8'>
+        <div className='grid grid-cols-1 gap-12 md:gap-8' id='projects'>
           <Heading2
             headingText={headingText}
             textAlign='text-center'
           />
           {projectList.map((project, index) =>
-            <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8'>
-              <div className='col-span-2 flex flex-col gap-4'>
+            <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8 flex order-last md:order-first'>
+              <div className='cols-1 col-span-5 md:col-span-2 gap-4'>
                 <h3 className='font-bold'>{++index} / {project.title.toLocaleUpperCase()}</h3>
                 <p>{project.techStack}</p>
                 <p>{`${project.description.substring(0, 300)} [...]`}</p>
@@ -39,7 +39,7 @@ export default function Projects({headingText, projectList}:Props){
                   }
                 </div>
               </div>
-              <div className='col-span-3'>
+              <div className='cols-1 col-span-5 md:col-span-3'>
                 <Image
                   src={project.projectImage.url} 
                   alt='ariel view of keyboard of Macbook with empty white space'
