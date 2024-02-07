@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './nav.module.css';
+import Link from 'next/link';
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +25,9 @@ export default function Nav() {
   return (
     <nav className="flex items-center justify-between flex-wrap py-2 px-8 sticky top-0 bg-white">
       <div className="mr-6">
-        <a className="text-xl text-black tracking-wide" href="/">
+        <Link className="text-xl text-black tracking-wide" href="/">
           chase<span className={styles.navLeftTitle}>TheCoder</span>
-        </a>
+        </Link>
       </div>
       <button onClick={handleClick} className='md:hidden'>
         <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size='lg' />
@@ -37,32 +38,31 @@ export default function Nav() {
           : 'hidden'}`}
       >
         <div>
-          <a 
+          <Link
             className="text-gray-500 hover:text-black"
             href="/#projects"
             onClick={closeMobileNav}
           >
             Projects
-          </a>
+          </Link>
         </div>
         <div>
-          <a
+          <Link
             className="text-gray-500 hover:text-black"
             href="/#about-me"
             onClick={closeMobileNav}
           >
             About
-          </a>
+          </Link>
         </div>
         <div>
-          <a
-            className="text-gray-500
-            hover:text-black"
+          <Link
+            className="text-gray-500 hover:text-black"
             href="/blog"
             onClick={closeMobileNav}
           >
             Blog
-          </a>
+          </Link>
         </div>
         <div>
           <a
