@@ -23,13 +23,18 @@ export default function Nav() {
   }
 
   return (
-    <nav className="flex items-center justify-between flex-wrap py-2 px-8 sticky top-0 bg-white">
+    <nav className="flex items-center justify-between flex-wrap py-2 px-8 sticky top-0 bg-white z-10">
       <div className="mr-6">
         <Link className="text-xl text-black tracking-wide" href="/">
           chase<span className={styles.navLeftTitle}>TheCoder</span>
         </Link>
       </div>
-      <button onClick={handleClick} className='md:hidden'>
+      <button 
+        onClick={handleClick}
+        className='md:hidden'
+        role='navigation'
+        aria-label='Main navigation menu'
+      >
         <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size='lg' />
       </button>
       <div 
@@ -39,7 +44,7 @@ export default function Nav() {
       >
         <div>
           <Link
-            className="text-gray-500 hover:text-black"
+            className="text-gray-500 hover:text-black z-0"
             href="/#projects"
             onClick={closeMobileNav}
           >
@@ -70,7 +75,7 @@ export default function Nav() {
             href="https://docs.google.com/document/d/1N-j-czmPYUi-sKHWNAb2uSJtC544tkLTqcIO_Dfsz1M/edit?usp=sharing"
             target='blank' onClick={closeMobileNav}
           >
-            Resume↗︎
+            Resume<span alt-text='Opens in new tab'>↗︎</span>
           </a>
         </div>
         <div>
@@ -80,7 +85,7 @@ export default function Nav() {
             target='blank'
             onClick={closeMobileNav}
           >
-            LinkedIn↗︎
+            LinkedIn<span alt-text='Opens in new tab'>↗︎</span>
           </a>
         </div>
         <div>
@@ -90,7 +95,7 @@ export default function Nav() {
             target='blank'
             onClick={closeMobileNav}
           >
-            GitHub↗︎
+            GitHub<span alt-text='Opens in new tab'>↗︎</span>
           </a>
         </div>
       </div>

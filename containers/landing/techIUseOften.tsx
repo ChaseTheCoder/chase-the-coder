@@ -59,7 +59,7 @@ const techList = [
 export function TechIcon({techIcon, techText, key}: any): ReactElement {
   return (
     <div className='flex flex-col justify-center items-center gap-3' key={key}>
-      <FontAwesomeIcon icon={techIcon} size='4x' className='text-green-600'/>
+      <FontAwesomeIcon icon={techIcon} size='4x' className='text-green-600' aria-hidden='true' />
       <p className='text-small'>{techText}</p>
     </div>
   )

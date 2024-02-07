@@ -22,19 +22,19 @@ export default function Projects({headingText, projectList}:Props){
           {projectList.map((project, index) =>
             <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8'>
               <div className='cols-1 col-span-5 md:col-span-2'>
-                <h3 className='font-bold mb-4'>{++index} / {project.title.toLocaleUpperCase()}</h3>
+                <h3 className='font-bold mb-4' id='project-title'>{++index} / {project.title.toLocaleUpperCase()}</h3>
                 <p className='my-3'>{project.techStack}</p>
-                <p className='text-justify my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
+                <p className='my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
                 <div className='grid grid-cols-3 my-3 underline'>
                   <Link href={'/blog'}>
-                    <p>Read More</p>
+                    <p id='read-more' aria-labelledby='read-more project-title'>Read More</p>
                   </Link>
                   <a target="_blank" href={project.linkGitHub} rel="noopener noreferrer">
-                    <p>GitHub Repo ↗︎</p>
+                    <p>GitHub Repo <span alt-text='Opens in new tab'>↗︎</span></p>
                   </a>
                   {project.linkLiveSite &&
                     <a target="_blank" href={project.linkLiveSite} rel="noopener noreferrer">
-                      <p>Live Site ↗︎</p>
+                      <p>Live Site <span alt-text='Opens in new tab'>↗︎</span></p>
                     </a>
                   }
                 </div>
@@ -42,7 +42,7 @@ export default function Projects({headingText, projectList}:Props){
               <div className='cols-1 col-span-5 md:col-span-3 flex order-first md:order-last'>
                 <Image
                   src={project.projectImage.url} 
-                  alt='ariel view of keyboard of Macbook with empty white space'
+                  alt={project.projectImage.altText}
                   width={700}
                   height={450}
                   className='object-cover rounded-lg shadow-2xl'

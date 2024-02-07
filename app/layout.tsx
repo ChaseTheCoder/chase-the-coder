@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Nav from "../components/Nav";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,17 +23,7 @@ export default function RootLayout({
         <main className='max-w-6xl mx-auto'>
           {children}
         </main>
-        <footer className='flex justify-between max-w-6xl mx-6 md:mx-10 lg:mx-auto'>
-          {/* <p>Chase The Coder</p>
-          <div className='flex gap-8'>
-            <FontAwesomeIcon icon={faLinkedin} size='2xl' className='text-green-600'/>
-            <FontAwesomeIcon icon={faGithub} size='2xl' className='text-green-600' />
-          </div> */}
-          <div className="flex flex-col items-center justify-center w-full">
-            <hr className="w-64 h-px my-2 bg-gray-200 border-0" />
-            <span className="mt-2 mb-4">Chase The Coder</span>
-        </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

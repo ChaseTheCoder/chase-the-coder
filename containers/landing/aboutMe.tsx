@@ -26,7 +26,7 @@ export default function AboutMe({headingText, aboutMe, image}:Props){
             headingText={headingText}
             textAlign='text-center md:text-start'
           />
-          <p className='pt-8 text-justify'>{aboutMe}</p>
+          <p className='pt-8 text-start'>{aboutMe}</p>
         </div>
       </div>
     </SectionBox>

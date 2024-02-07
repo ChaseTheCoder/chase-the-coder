@@ -7,8 +7,9 @@ export interface HomePageObjectInterface {
   homePage: HomePageInterface
 }
 
-export interface URL {
+export interface Image {
   url: string
+  altText: string
 }
 
 export interface HomePageInterface {
@@ -19,8 +20,8 @@ export interface HomePageInterface {
   title1: string
   title2: string
   subtitle: string
-  heroImage: URL
-  sectionAboutMeImage:URL
+  heroImage: Image
+  sectionAboutMeImage: Image
 };
 
 export const homePage = async () => {
@@ -36,9 +37,11 @@ export const homePage = async () => {
         subtitle
         heroImage {
           url
+          altText
         }
         sectionAboutMeImage {
           url
+          altText
         }
       }
     } 
@@ -65,7 +68,7 @@ export interface ProjectInterface {
   linkYouTube?: string
   techStack: string
   title: string
-  projectImage: URL
+  projectImage: Image
   blogCategories: BlogCategories
 }
 
@@ -82,6 +85,7 @@ export const projects = async () => {
         title
         projectImage {
           url
+          altText
         }
         blogCategories {
           category
