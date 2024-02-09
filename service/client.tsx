@@ -7,7 +7,7 @@ export interface HomePageObjectInterface {
   homePage: HomePageInterface
 }
 
-export interface Image {
+export interface ImageObject {
   url: string
   altText: string
 }
@@ -20,8 +20,8 @@ export interface HomePageInterface {
   title1: string
   title2: string
   subtitle: string
-  heroImage: Image
-  sectionAboutMeImage: Image
+  heroImage: ImageObject
+  sectionAboutMeImage: ImageObject
 };
 
 export const homePage = async () => {
@@ -68,7 +68,7 @@ export interface ProjectInterface {
   linkYouTube?: string
   techStack: string
   title: string
-  projectImage: Image
+  projectImage: ImageObject
   blogCategories: BlogCategories
 }
 
@@ -97,4 +97,30 @@ export const projects = async () => {
   const response: BlogPostsObjectInterface = await graphQLClient.request(query);
 
   return response.blog_Posts;
+}
+
+export interface BlogPageObjectInterface {
+  blogPage: BlogPageInterface
+}
+
+export interface BlogPageInterface {
+  title: string
+  heroImage: ImageObject
+}
+
+export const blogPage = async () => {
+  const query = gql`
+    query BlogPage {
+      blogPage(where: {id: "clsb8nq8jlb5w0alex7qwurzo"}) {
+        title
+        heroImage {
+          altText
+          url
+        }
+      }
+    }
+  `;
+  const response: BlogPageObjectInterface = await graphQLClient.request(query);
+
+  return response.blogPage;
 }

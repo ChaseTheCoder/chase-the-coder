@@ -30,7 +30,7 @@ export default function Home() {
                 setError(false);
                 setHomeData(res);
                 setLoading(false);
-            }, 3000);
+            }, 2000);
         } else {
             setLoading(false);
             setError(true);
