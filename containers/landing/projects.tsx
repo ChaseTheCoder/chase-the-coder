@@ -1,16 +1,15 @@
 import Heading2 from "@/components/Heading2";
 import SectionBox from "./sectionBox";
 import Image from 'next/image'
-import { ProjectInterface } from "@/service/client";
+import { BlogPostsInterface } from "@/service/client";
 import Link from "next/link";
 
 type Props = {
   headingText: string;
-  projectList?: ProjectInterface[];
+  projectList?: BlogPostsInterface[];
 }
 
 export default function Projects({headingText, projectList}:Props){
-  console.log(projectList);
   return (
     <SectionBox>
       {projectList ?
@@ -26,7 +25,7 @@ export default function Projects({headingText, projectList}:Props){
                 <p className='my-3'>{project.techStack}</p>
                 <p className='my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
                 <div className='grid grid-cols-3 my-3 underline'>
-                  <Link href={'/blog'}>
+                  <Link href={`/blog/${project.id}`}>
                     <p id='read-more' aria-labelledby='read-more project-title'>Read More</p>
                   </Link>
                   <a target="_blank" href={project.linkGitHub} rel="noopener noreferrer">

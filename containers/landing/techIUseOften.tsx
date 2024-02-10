@@ -5,6 +5,11 @@ import { ReactElement } from "react";
 import { faCss3Alt, faHtml5, faReact, faJs, faNode, faGithub, faJenkins, faJava, faPython } from "@fortawesome/free-brands-svg-icons";
 import { faDiagramProject, faUniversalAccess } from "@fortawesome/free-solid-svg-icons";
 
+type IconProps = {
+  techIcon: any
+  techText: string
+}
+
 type Props = {
   headingText: string;
 }
@@ -56,9 +61,9 @@ const techList = [
   },
 ]
 
-export function TechIcon({techIcon, techText, key}: any): ReactElement {
+export function TechIcon({techIcon, techText}: IconProps): ReactElement {
   return (
-    <div className='flex flex-col justify-center items-center gap-3' key={key}>
+    <div className='flex flex-col justify-center items-center gap-3'>
       <FontAwesomeIcon icon={techIcon} size='4x' className='text-green-600' aria-hidden='true' />
       <p className='text-small'>{techText}</p>
     </div>
@@ -75,11 +80,12 @@ export default function TechIUseOften({headingText}: Props){
         />
         <div className='flex flex-wrap justify-between gap-3'>
             {techList.map((tech, index) => 
-              <TechIcon
-                key={`${index}-tech-icon`}
-                techIcon={tech.techIcon}
-                techText={tech.techText}
-              />
+              <div key={`${index}-tech-icon`} >
+                <TechIcon
+                  techIcon={tech.techIcon}
+                  techText={tech.techText}
+                />
+              </div>
             )}
         </div>
       </div>

@@ -8,7 +8,14 @@ type Props = {
   heroImage: string;
 }
 
+const consolLogMessage = `
+( ⸝⸝•ᴗ•⸝⸝ )੭⁾⁾
+
+Umm. Hi.
+`
+
 export default function Hero({title1, title2, subtitle, heroImage}: Props) {
+  console.log(consolLogMessage);
   return (
     <div className='h-[calc(100vh-45px)]'>
       <div className='grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-0 lg:gap-4 h-full'>
@@ -33,6 +40,7 @@ export default function Hero({title1, title2, subtitle, heroImage}: Props) {
             width={450}
             height={450}
             className='object-cover rounded-lg shadow-2xl w-auto h-5/6'
+            priority
           />
         </div>
       </div>

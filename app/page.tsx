@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { HomePageInterface, homePage, ProjectInterface, projects } from '../service/client';
+import { HomePageInterface, homePage, BlogPostsInterface, projects } from '../service/client';
 import TechIUseOften from '@/containers/landing/techIUseOften'
 import Hero from '@/containers/landing/hero';
 import Projects from '@/containers/landing/projects';
@@ -11,7 +11,7 @@ export default function Home() {
     const [homeData, setHomeData] = useState<HomePageInterface>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [projectsData, setProjectsData] = useState<ProjectInterface[]>();
+    const [projectsData, setProjectsData] = useState<BlogPostsInterface[]>();
     const [loadingProjects, setProjectsLoading] = useState(false);
     const [errorProjects, setProjectsError] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Home() {
     const getProjectData = async () => {
         setProjectsLoading(true);
         if(error) setProjectsError(false);
-        const res: ProjectInterface[] = await projects();
+        const res: BlogPostsInterface[] = await projects();
         if(res){
             setLoading(false);
             setProjectsData(res);

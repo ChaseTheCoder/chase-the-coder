@@ -25,6 +25,7 @@ export default function BlogHero({title, blogImage}: Props) {
             width={450}
             height={450}
             className='object-cover rounded-lg shadow-2xl w-auto h-5/6'
+            priority
           />
         </div>
       </div>

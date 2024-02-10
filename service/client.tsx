@@ -52,18 +52,18 @@ export const homePage = async () => {
 }
 
 export interface BlogPostsObjectInterface {
-  blog_Posts: ProjectInterface[]
+  blog_Posts: BlogPostsInterface[]
 }
 
-export default interface BlogCategories {
+export interface BlogCategories {
   category: string
   id: string
 }
 
-export interface ProjectInterface {
+export interface BlogPostsInterface {
   id: string
   description: string
-  linkGitHub: string
+  linkGitHub?: string
   linkLiveSite?: string
   linkYouTube?: string
   techStack: string
@@ -123,4 +123,63 @@ export const blogPage = async () => {
   const response: BlogPageObjectInterface = await graphQLClient.request(query);
 
   return response.blogPage;
+}
+
+export interface BlogPostsObjectInterface {
+  blog_Posts: BlogPostsInterface[]
+}
+
+export const blogPosts = async () => {
+  const query = gql`
+    query BlogPosts {
+      blog_Posts {
+        id
+        title
+        description
+        techStack
+        projectImage {
+          altText
+          url
+        }
+        blogCategories {
+          category
+          id
+        }
+      }
+    }
+  `;
+  const response: BlogPostsObjectInterface = await graphQLClient.request(query);
+
+  return response.blog_Posts;
+}
+
+export interface BlogPostObjectInterface {
+  blog_Post: BlogPostsInterface
+}
+
+export const blogPost = async (id: string) => {
+  const query = gql`
+    query BlogPost($id: ID!) {
+      blog_Post(where: {id: $id}) {
+        linkGitHub
+        linkLiveSite
+        linkYouTube
+        id
+        techStack
+        title
+        description
+        blogCategories {
+          category
+          id
+        }
+        projectImage {
+          altText
+          url
+        }
+      }
+    }
+  `;
+  const response: BlogPostObjectInterface = await graphQLClient.request(query, { id });
+
+  return response.blog_Post;
 }
