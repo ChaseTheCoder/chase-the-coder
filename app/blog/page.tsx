@@ -29,7 +29,7 @@ export default function Blog() {
             setError(false);
             setBlogData(res);
             setLoading(false);
-        }, 1500);
+        });
     } else {
         setLoading(false);
         setError(true);
@@ -44,7 +44,7 @@ export default function Blog() {
             setError(false);
             setBlogPostsData(res);
             setLoadingBlogPosts(false);
-        }, 1500);
+        });
     } else {
         setLoadingBlogPosts(false);
         setError(true);
@@ -67,9 +67,13 @@ export default function Blog() {
             title={blogData.title}
             blogImage={blogData.heroImage}
           />
-          <BlogPosts
-            blogPosts={blogPostsData && blogPostsData}
-          />
+          {
+            loadingBlogPosts ?
+            <BlogPosts
+              blogPosts={blogPostsData}
+            /> :
+            <LoadingPage/>
+          }
         </>
       }
     </div>

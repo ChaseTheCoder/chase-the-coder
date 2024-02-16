@@ -21,7 +21,7 @@ export default function Projects({headingText, projectList}:Props){
           {projectList.map((project, index) =>
             <div key={project.id} className='grid grid-cols-5 gap-y-4 gap-x-8'>
               <div className='cols-1 col-span-5 md:col-span-2'>
-                <h3 className='font-bold mb-4' id='project-title'>{++index} / {project.title.toLocaleUpperCase()}</h3>
+                <h3 className='font-bold mb-4' id='project-title'>{++index} / {project.title}</h3>
                 <p className='my-3'>{project.techStack}</p>
                 <p className='my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
                 <div className='grid grid-cols-3 my-3 underline'>
