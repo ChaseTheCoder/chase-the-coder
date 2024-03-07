@@ -59,7 +59,7 @@ export default function Blog() {
   }
 
   return (
-    <div className='grid grid-cols-1 divide-y mx-6 md:mx-10'>
+    <div className='grid grid-cols-1 divide-y mx-0 md:mx-10'>
       {
         blogData &&
         <>

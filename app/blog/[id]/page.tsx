@@ -28,7 +28,7 @@ export default function BlogPost({ params }: { params: { id: string } })  {
     return;
   }
   return (
-      <div className='flex flex-col mx-20 my-5'>
+      <div className='flex flex-col mx-10 md:mx-40 my-5'>
         {blogPostData ?
           <div key={blogPostData.id} className='flex flex-col gap-8'>
               <Image
@@ -39,10 +39,10 @@ export default function BlogPost({ params }: { params: { id: string } })  {
                 className='object-cover rounded-lg shadow-lg'
               />
               <div className='flex flex-col gap-4 justify-center'>
-                <h1 className='font-bold text-6xl text-center'>{blogPostData.title.toLocaleUpperCase()}</h1>
+                <h1 className='font-bold text-2xl md:text-6xl text-center'>{blogPostData.title.toLocaleUpperCase()}</h1>
                 <p className='text-center'>{blogPostData.techStack}</p>
               </div>
-              <p className=''>{blogPostData.description}</p>
+              <p className='text-large leading-8 text-slate-800'>{blogPostData.description}</p>
             </div> :
             <LoadingPage/>
         }
