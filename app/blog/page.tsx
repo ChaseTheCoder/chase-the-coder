@@ -3,26 +3,28 @@ import { BlogPageInterface, blogPage, blogPosts, BlogPostsInterface } from '@/se
 import { useEffect, useState } from 'react';
 import LoadingPage from '@/components/loading';
 import BlogHero from '@/containers/blog/hero';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHammer } from '@fortawesome/free-solid-svg-icons';
 import BlogPosts from '@/containers/blog/blogPosts';
 
 export default function Blog() {
   const [blogData, setBlogData] = useState<BlogPageInterface>();
-  const [loading, setLoading] = useState(true);
-  const [blogPostsData, setBlogPostsData] = useState<BlogPostsInterface[]>();
-  const [loadingBlogPosts, setLoadingBlogPosts] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
+  const [blogPostsData, setBlogPostsData] = useState<BlogPostsInterface[]>();
+  const [loadingBlogPosts, setLoadingBlogPosts] = useState(false);
+  const [errorBlogPosts, setErrorBlogPosts] = useState(false);
+  if(error) {console.log("Blog Page error")}
+  if(errorBlogPosts) {console.log("Blog Post error")}
+  
   useEffect(() => {
     getBlogHeroData();
-  })
+  }, [])
 
   useEffect(() => {
     getBlogPosts();
-  })
+  }, [])
 
   const getBlogHeroData = async () => {
+    setLoading(true);
     const res: BlogPageInterface = await blogPage();
     if(res){
         setTimeout(() => {
@@ -38,16 +40,14 @@ export default function Blog() {
   }
 
   const getBlogPosts = async () => {
+    setLoadingBlogPosts(true);
     const res: BlogPostsInterface[] = await blogPosts();
     if(res){
-        setTimeout(() => {
-            setError(false);
-            setBlogPostsData(res);
-            setLoadingBlogPosts(false);
-        });
+      setLoadingBlogPosts(false);
+      setBlogPostsData(res);
     } else {
-        setLoadingBlogPosts(false);
-        setError(true);
+      setLoadingBlogPosts(false);
+      setErrorBlogPosts(true);
     }
     return;
   }
@@ -68,11 +68,11 @@ export default function Blog() {
             blogImage={blogData.heroImage}
           />
           {
-            loadingBlogPosts ?
+            blogPostsData ?
             <BlogPosts
               blogPosts={blogPostsData}
             /> :
-            <LoadingPage/>
+            <LoadingPage />
           }
         </>
       }
