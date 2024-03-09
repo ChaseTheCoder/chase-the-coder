@@ -17,11 +17,11 @@ export default function Blog() {
   
   useEffect(() => {
     getBlogHeroData();
-  }, [])
+  }, []);
 
   useEffect(() => {
     getBlogPosts();
-  }, [])
+  }, []);
 
   const getBlogHeroData = async () => {
     setLoading(true);

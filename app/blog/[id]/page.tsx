@@ -11,7 +11,7 @@ export default function BlogPost({ params }: { params: { id: string } })  {
 
   useEffect(() => {
     getBlogPost();
-  })
+  }, []);
 
   const getBlogPost = async () => {
     const res: BlogPostsInterface = await blogPost(params.id);
