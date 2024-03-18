@@ -19,7 +19,7 @@ export default function blogPosts({blogPosts}: Props)  {
                   >
                   <h2 className='font-bold mb-4' id='project-title'>{blogPost.title.toLocaleUpperCase()}</h2>
                   <p className='my-3'>{blogPost.techStack}</p>
-                  <p className='my-3 text-slate-600'>{`${blogPost.description.substring(0, 300)} [...]`}</p>
+                  <p className='my-3 text-slate-700'>{`${blogPost.description.substring(0, 300)} [...]`}</p>
                   </Link>
                 </div>
                 <div className='cols-1 col-span-5 md:col-span-3 flex order-first md:order-last'>

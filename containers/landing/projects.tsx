@@ -23,17 +23,34 @@ export default function Projects({headingText, projectList}:Props){
               <div className='cols-1 col-span-5 md:col-span-2'>
                 <h3 className='font-bold mb-4' id='project-title'>{++index} / {project.title}</h3>
                 <p className='my-3'>{project.techStack}</p>
-                <p className='my-3'>{`${project.description.substring(0, 300)} [...]`}</p>
-                <div className='grid grid-cols-3 my-3 underline'>
-                  <Link href={`/blog/${project.id}`}>
-                    <p id='read-more' aria-labelledby='read-more project-title'>Read More</p>
+                <p className='my-3 text-slate-700'>{`${project.description.substring(0, 300)} [...]`}</p>
+                <div className='grid grid-cols-3 my-3'>
+                  <Link href={`/blog/${project.id}`} className='underline'>
+                    <p 
+                      id='read-more'
+                      aria-labelledby='read-more project-title'
+                    >
+                      Read More →
+                    </p>
                   </Link>
-                  <a target="_blank" href={project.linkGitHub} rel="noopener noreferrer">
-                    <p>GitHub Repo <span alt-text='Opens in new tab'>↗︎</span></p>
+                  <a
+                    target="_blank"
+                    href={project.linkGitHub}
+                    rel="noopener noreferrer"
+                    alt-text='Opens in new tab'
+                    className='underline'
+                  >
+                    <p>GitHub Repo <span>↗︎</span></p>
                   </a>
                   {project.linkLiveSite &&
-                    <a target="_blank" href={project.linkLiveSite} rel="noopener noreferrer">
-                      <p>Live Site <span alt-text='Opens in new tab'>↗︎</span></p>
+                    <a 
+                      target="_blank"
+                      href={project.linkLiveSite}
+                      rel="noopener noreferrer"
+                      alt-text='Opens in new tab'
+                      className='underline'
+                    >
+                      <p>Live Site ↗︎</p>
                     </a>
                   }
                 </div>
