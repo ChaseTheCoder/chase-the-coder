@@ -1,0 +1,3 @@
+.codeBlock > pre > code {
+  text-wrap: wrap;
+}

@@ -3,6 +3,7 @@ import LoadingPage from "@/components/loading";
 import { BlogPostsInterface, blogPost } from "@/service/client";
 import Image from 'next/image'
 import { useEffect, useState } from "react";
+import styles from './page.module.css';
 
 export default function BlogPost({ params }: { params: { id: string } })  {
   const [blogPostData, setBlogPostData] = useState<BlogPostsInterface>();
@@ -16,14 +17,14 @@ export default function BlogPost({ params }: { params: { id: string } })  {
   const getBlogPost = async () => {
     const res: BlogPostsInterface = await blogPost(params.id);
     if(res){
-        setTimeout(() => {
-            setError(false);
-            setBlogPostData(res);
-            setLoadingBlogPost(false);
-        }, 1500);
-    } else {
+      setTimeout(() => {
+        setError(false);
+        setBlogPostData(res);
         setLoadingBlogPost(false);
-        setError(true);
+      }, 1500);
+    } else {
+      setLoadingBlogPost(false);
+      setError(true);
     }
     return;
   }
@@ -41,8 +42,13 @@ export default function BlogPost({ params }: { params: { id: string } })  {
               <div className='flex flex-col gap-4 justify-center'>
                 <h1 className='font-bold text-2xl md:text-6xl text-center'>{blogPostData.title.toLocaleUpperCase()}</h1>
                 <p className='text-center'>{blogPostData.techStack}</p>
+                {blogPostData.content?.html && 
+                  <div
+                    className={`text-large leading-8 text-slate-800 codeBlock flex flex-col gap-4`}
+                    dangerouslySetInnerHTML={{__html: blogPostData.content.html}}
+                  />
+                }
               </div>
-              <p className='text-large leading-8 text-slate-800'>{blogPostData.description}</p>
             </div> :
             <LoadingPage/>
         }

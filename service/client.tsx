@@ -60,6 +60,10 @@ export interface BlogCategories {
   id: string
 }
 
+interface RichText {
+  html: String
+}
+
 export interface BlogPostsInterface {
   id: string
   description: string
@@ -70,6 +74,7 @@ export interface BlogPostsInterface {
   title: string
   projectImage: ImageObject
   blogCategories: BlogCategories
+  content?: RichText
 }
 
 export const projects = async () => {
@@ -175,6 +180,9 @@ export const blogPost = async (id: string) => {
         projectImage {
           altText
           url
+        }
+        content {
+          html
         }
       }
     }
