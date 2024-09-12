@@ -72,7 +72,7 @@ export default function Nav() {
         <div>
           <a
             className="text-gray-500 hover:text-black"
-            href="https://docs.google.com/document/d/1N-j-czmPYUi-sKHWNAb2uSJtC544tkLTqcIO_Dfsz1M/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1DD0O3NbqSerz2iiuM8HSJGN447RabBGlUwi0ukHvDWA/edit"
             target='blank' onClick={closeMobileNav}
           >
             Resume<span alt-text='Opens in new tab'>↗︎</span>
