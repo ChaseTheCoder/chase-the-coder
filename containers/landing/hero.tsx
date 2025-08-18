@@ -35,8 +35,8 @@ export default function Hero({title1, title2, subtitle, heroImage}: Props) {
         </div>
         <div className='grid-rows-1 flex lg:h-full justify-center lg:justify-end items-center'>
           <Image
-            src={heroImage} 
             alt='ariel view of keyboard of Macbook with empty white space'
+            src={heroImage} 
             width={450}
             height={450}
             className='object-cover rounded-lg shadow-2xl w-auto h-5/6'

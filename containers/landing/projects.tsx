@@ -57,8 +57,8 @@ export default function Projects({headingText, projectList}:Props){
               </div>
               <div className='cols-1 col-span-5 md:col-span-3 flex order-first md:order-last'>
                 <Image
-                  src={project.projectImage.url} 
                   alt={project.projectImage.altText}
+                  src={project.projectImage.url} 
                   width={700}
                   height={450}
                   className='object-cover rounded-lg shadow-2xl'

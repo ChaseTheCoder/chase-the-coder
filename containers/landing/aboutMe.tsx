@@ -14,8 +14,8 @@ export default function AboutMe({headingText, aboutMe, image}:Props){
       <div className='grid grid-cols-5 gap-4' id='about-me'>
         <div className='flex justify-center md:justify-start items-center col-span-5 md:col-span-2'>
           <Image
-            src={image} 
             alt='ariel view of keyboard of Macbook with empty white space'
+            src={image} 
             width={400}
             height={400}
             className='object-cover rounded-lg shadow-2xl'

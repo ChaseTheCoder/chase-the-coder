@@ -24,8 +24,8 @@ export default function blogPosts({blogPosts}: Props)  {
                 </div>
                 <div className='cols-1 col-span-5 md:col-span-3 flex order-first md:order-last'>
                   <Image
-                    src={blogPost.projectImage.url} 
                     alt={blogPost.projectImage.altText}
+                    src={blogPost.projectImage.url} 
                     width={700}
                     height={450}
                     className='object-cover rounded-lg shadow-2xl'

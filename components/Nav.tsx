@@ -1,7 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './nav.module.css';
 import Link from 'next/link';
 
@@ -11,13 +9,22 @@ export default function Nav() {
   const breakpoint = 620;
 
   useEffect(() => {
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
+    const handleResize = () => setWidth(window.innerWidth);
+    
+    // Set initial width
+    setWidth(window.innerWidth);
+    
+    window.addEventListener("resize", handleResize);
+    
     if(width > breakpoint) setIsOpen(false);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, [width]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   }
+  
   const closeMobileNav = () => {
     setIsOpen(false);
   }
@@ -32,10 +39,10 @@ export default function Nav() {
       <button 
         onClick={handleClick}
         className='md:hidden'
-        role='navigation'
+        type="button"
         aria-label='Main navigation menu'
       >
-        <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size='lg' />
+        <span className="text-xl">{isOpen ? '✕' : '☰'}</span>
       </button>
       <div 
         className={`md:flex md:flex-row md:relative md:flex gap-8 
@@ -73,29 +80,33 @@ export default function Nav() {
           <a
             className="text-gray-500 hover:text-black"
             href="https://docs.google.com/document/d/1DD0O3NbqSerz2iiuM8HSJGN447RabBGlUwi0ukHvDWA/edit"
-            target='blank' onClick={closeMobileNav}
+            target='_blank' 
+            rel="noopener noreferrer"
+            onClick={closeMobileNav}
           >
-            Resume<span alt-text='Opens in new tab'>↗︎</span>
+            Resume<span aria-label='Opens in new tab'>↗︎</span>
           </a>
         </div>
         <div>
           <a
             className="text-gray-500 hover:text-black"
             href="https://www.linkedin.com/in/chasethecoder/"
-            target='blank'
+            target='_blank'
+            rel="noopener noreferrer"
             onClick={closeMobileNav}
           >
-            LinkedIn<span alt-text='Opens in new tab'>↗︎</span>
+            LinkedIn<span aria-label='Opens in new tab'>↗︎</span>
           </a>
         </div>
         <div>
           <a
             className="text-gray-500 hover:text-black"
             href="https://github.com/ChaseTheCoder"
-            target='blank'
+            target='_blank'
+            rel="noopener noreferrer"
             onClick={closeMobileNav}
           >
-            GitHub<span alt-text='Opens in new tab'>↗︎</span>
+            GitHub<span aria-label='Opens in new tab'>↗︎</span>
           </a>
         </div>
       </div>

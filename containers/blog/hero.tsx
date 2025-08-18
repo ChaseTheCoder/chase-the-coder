@@ -20,8 +20,8 @@ export default function BlogHero({title, blogImage}: Props) {
         </div>
         <div className='grid-rows-1 flex lg:h-full justify-center lg:justify-end items-center'>
           <Image
-            src={blogImage.url} 
             alt={blogImage.altText}
+            src={blogImage.url} 
             width={450}
             height={450}
             className='object-cover rounded-lg shadow-2xl w-auto h-5/6'
