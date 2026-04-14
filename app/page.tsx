@@ -26,11 +26,9 @@ export default function Home() {
     const getHomePageData = async () => {
         const res: HomePageInterface = await homePage();
         if(res){
-            setTimeout(() => {
-                setError(false);
-                setHomeData(res);
-                setLoading(false);
-            }, 2000);
+            setError(false);
+            setHomeData(res);
+            setLoading(false);
         } else {
             setLoading(false);
             setError(true);

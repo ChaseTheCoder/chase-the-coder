@@ -4,6 +4,9 @@ import Nav from "../components/Nav";
 import "./globals.css";
 import '../lib/fontawesome';
 import Footer from "@/components/footer";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
 
